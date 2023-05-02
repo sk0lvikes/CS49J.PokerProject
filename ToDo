@@ -1,0 +1,41 @@
+Main.java: 
+  -initialize/start game, choose number of pc players (1-9)
+
+Card.java: 
+  -class represents a single card, with suit and rank. 
+    --concrete class with fields for suit and rank.
+
+Deck.java: 
+  -class represents 1 deck of 52 cards. shuffle, deal cards. 
+    --concrete class with a field for array list of cards, and methods for shuffling and dealing cards, maybe reset deck.
+
+Player.java: 
+  -class represents a player, with a hand of cards and an amount of chips. 
+    -abstract class with fields for the hand, chips, methods for betting, folding, etc.
+
+HumanPlayer.java: 
+  -class extends Player and implements any human-specific behavior.
+
+AIPlayer.java: 
+  -class extends Player and implements the AI logic for making decisions. (maybe fold unless pair minimum, all in on face card pocket pair?)
+    --concrete class that overrides methods from Player class
+
+PokerHand.java: 
+  -represents a poker hand, and can evaluate the strength of the hand. 
+    --concrete class with a field representing a list of cards, and methods to evaluate the hand.
+
+Game.java: 
+  -manages the game flow, including the dealing of cards, betting rounds, and determining the winner. 
+    --concrete class with fields (deck, player list, game state) methods to manage the game flow.
+
+GameLayout.java: 
+  -manages the layout that represents the game screen (cards,chips, cpu players)
+    --concrete class with fields representing the various UI elements, and methods to update the UI based on the game state.
+    Table background, middle of table for shared cards, pot amount
+    player areas w/ chips, cards (Facedown for cpu), current bet
+    buttons: bet, all in, fold, check
+    menu? quit game, main menu
+
+HandEvaluator.java: 
+  -evaluates a poker hand and determines its rank (e.g., straight flush, four of a kind, full house, etc.). 
+    --concrete class with methods to evaluate hands. (Should I call after ever deal and update player on best hand?)
